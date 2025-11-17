@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Login</h1>
+    <input type="text" placeholder="User" id="user">
+    <input type="password" placeholder="Password" id="pass">
+    <p style="color: red"></p>
+    <button onclick="login()">Login</button>
+    <a href="register.html">No account? Register now!</a>
+    <script>
+        if(localStorage.getItem("github3-2.loginStatus") != null) {
+            document.querySelector("body").innerHTML = "    <h1>you're already logged in. log out by going here</h1>        <a href=\"logout.html\">Log out</a>";
+        }
+        function login() {
+            const user = document.getElementById("user").value;
+            const pass = document.getElementById("pass").value;
+            if (user.trim() != "" && pass.trim() != "") {
+                if (localStorage.getItem("github3." + user) == pass) {
+                    localStorage.setItem("github3-2.loginStatus", user);
+                    window.location.replace("success.html");
+                }
+                else {
+                    document.querySelector("p").innerText = "nuh uh try again";
+                    return;
+                }
+            }
+            else {
+                document.querySelector("p").innerText = "User or password can't be blank.";
+                return;
+            }
+        }
+    </script>
+</body>
+</html>

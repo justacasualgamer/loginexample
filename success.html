@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logged in!</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <script>
+        if (localStorage.getItem("github3-2.loginStatus") != null) {
+            document.querySelector("body").innerHTML = "    <h1>Logged in! Go here to log out.</h1>         <a href=\"logout.html\">Log out</a>"
+        }
+        else {
+            window.location.replace("index.html");
+        }
+    </script>
+</body>
+</html>

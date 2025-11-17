@@ -1,0 +1,12 @@
+input {
+    display: block;
+    margin-bottom: 5px;
+    width: 7cm;
+    height: 20pt;
+}
+h1, p, input, button, a, p {
+    font-family: 'Montserrat';
+}
+a, p {
+    font-size: small;
+}
